@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+gem 'awesome_print'
+gem 'xml-simple'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
