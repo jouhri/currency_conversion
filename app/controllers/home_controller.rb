@@ -1,15 +1,16 @@
 # require 'net/http'
-require 'xmlsimple'
 
 class HomeController < ApplicationController
   def index
-  	uri = URI('http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml')
-  	@res = XmlSimple.xml_in(Net::HTTP.get(uri), {'KeyAttr' => 'currency'})
-  	@res = @res["Cube"][0]["Cube"][0]["Cube"]
+  	@res = Currency.all
   end
 
   def convertion
-  	p params
+  	currency_in =  Currency.find_by_country(params[:currency_in])
+  	currency_out = Currency.find_by_country(params[:currency_out])
+  	@output = ((currency_out.rate * params[:amount].to_i ) / currency_in.rate).round(3)
+    @res = Currency.all
+    render "home/index"
   end
 
 end

@@ -18,3 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+
+every 1.day, :at => '10:30 pm' do
+	rake "currency:update_rate"
+	puts "rate updated"
+end 
