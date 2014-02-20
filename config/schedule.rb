@@ -20,6 +20,6 @@ set :output, "cron_log.log"
 # Learn more: http://github.com/javan/whenever
 
 
-every 1.minutes do
+every 6.hours do
 	rake "currency:update_rate"
 end 
