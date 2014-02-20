@@ -5,7 +5,7 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, "cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -20,7 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every 1.day, :at => '10:30 pm' do
+every 1.minutes do
 	rake "currency:update_rate"
-	puts "rate updated"
 end 

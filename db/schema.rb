@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140216211847) do
+ActiveRecord::Schema.define(version: 20140217171320) do
 
   create_table "currencies", force: true do |t|
     t.string   "country"
-    t.integer  "rate"
+    t.float    "rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
